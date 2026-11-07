@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /config/
+Disallow: /includes/
+Disallow: /storage/
+
+Sitemap: https://deepcleaningservices.co/sitemap.xml

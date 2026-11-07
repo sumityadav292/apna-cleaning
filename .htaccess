@@ -1,0 +1,40 @@
+
+Options -Indexes
+DirectoryIndex index.php
+
+ErrorDocument 404 /apna-cleaning-updated/404.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /apna-cleaning-updated/
+
+    # Services listing
+    RewriteRule ^services/?$ services.php [QSA,L,NC]
+
+    # Individual service pages
+    RewriteRule ^services/([a-z0-9-]+)/?$ services/detail.php?slug=$1 [QSA,L,NC]
+
+    # Blog listing
+    RewriteRule ^blog/?$ blog/index.php [QSA,L,NC]
+
+    # Individual blog posts
+    RewriteRule ^blog/([a-z0-9-]+)/?$ blog/post.php?slug=$1 [QSA,L,NC]
+
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+</IfModule>

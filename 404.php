@@ -1,0 +1,3 @@
+<?php require_once __DIR__.'/includes/bootstrap.php';http_response_code(404);$pageTitle='Page not found | '.$config['business_name'];require __DIR__.'/includes/header.php';?>
+<section class="section not-found"><div class="container"><div class="eyebrow"><span></span> 404 · PAGE NOT FOUND</div><h1>Looks like this page <em>has moved.</em></h1><p>The link may be incorrect or the page may not be available yet. Let's get you back on track.</p><a class="button button-primary" href="<?=e(site_url())?>">Back to homepage <i class="fa-solid fa-arrow-right"></i></a></div></section>
+<?php require __DIR__.'/includes/footer.php'; ?>
